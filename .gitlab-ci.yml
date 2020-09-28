@@ -1,0 +1,33 @@
+stages:
+  - compile
+  - publish
+
+cache:
+  paths:
+    - node_modules/
+
+compile:
+  image: node
+  stage: compile
+  script:
+    - npm set registry='http://npm.lending.isb/'
+    - npm install --progress=false
+    - npm run test
+    - npm run build
+    - node -p "require('./package.json').version" > version.txt
+  artifacts:
+    paths:
+      - dist/
+      - package.json
+      - version.txt
+    expire_in: 1 day
+
+publish:
+  image: node
+  stage: publish
+  script:
+    - export PROJECT_VERSION=$(head -1 version.txt)
+    - if [ "$PROJECT_VERSION" != "$CI_COMMIT_TAG" ] ; then exit 1; fi
+    - npm publish
+  only:
+    - tags
