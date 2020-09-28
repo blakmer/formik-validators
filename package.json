@@ -31,5 +31,8 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "prettier": "^2.1.2"
+  },
+  "publishConfig": {
+    "registry": "http://npm.lending"
   }
 }
