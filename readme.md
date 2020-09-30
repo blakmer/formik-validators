@@ -26,14 +26,14 @@ Each validation case has follow signature:
 ### Examples:
 
 ```js
-let max = 64;
+let max = 64
 export const testAnything = {
-  name: "test",
+  name: 'test',
   exclusive: true,
   params: { max },
-  message: "${path} must be less than ${max} characters",
-  test: (value) => value == null || value.length <= max,
-};
+  message: '${path} must be less than ${max} characters',
+  test: (value) => value == null || value.length <= max
+}
 ```
 
 You can use default object provided library, but if you need you can override properties and customize validation object
@@ -41,3 +41,17 @@ You can use default object provided library, but if you need you can override pr
 ### API
 
 - `testPhoneNumber` - test mobile phone by pattern `+7 (000) 000 00 00`
+- `testDate` - test date by format `DD.MM.YY`
+- `testEmail` - test for email
+- `testVINLetters` - test for characters [O, Q, I] in VIN
+- `testVINLength` - test for length VIN (17 simbols)
+- `testPassportNumber` - test Passport serical and number by pattern `11-11 111111`
+- `testPassportCodeDep` - test code of department by pattern `111-111`
+- `testAge18` - test date by age over 18
+- `testAge21` - test date by age over 21
+- `testPersonalINN` - test personal INN
+- `testLegalINN` - test legal INN
+- `tesBankCardNumber` - test card number by pattern `1111 1111 1111 1111`
+- `tesBankCardTerm` - test format of card validity. Format - `MM.YY`
+- `tesBankCardValidity` - test validity of card, when card expired
+- `testBankCardCVC` - test CVC code by format `111`
