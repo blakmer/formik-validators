@@ -27,6 +27,12 @@ export const testDate = {
   message: 'Неверный формат даты'
 }
 
+export const testFIO = {
+  name: 'testFIO',
+  test: (value) => /^[а-яА-ЯёЁa-zA-Z \d./(//)/-]*$/.test(value),
+  message: 'Неверный формат ФИО'
+}
+
 export const testEmail = {
   name: 'testEmail',
   test: (value) => /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/.test(value),
