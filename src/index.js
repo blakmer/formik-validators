@@ -140,20 +140,26 @@ export const testLegalINN = {
   message: 'Неверный номер ИНН'
 }
 
-export const tesBankCardNumber = {
-  name: 'tesBankCardNumber',
+export const testKPP = {
+  name: 'testKPP',
+  test: (value) => /^\d{9}$/.test(value),
+  message: 'КПП должен состоять из 9 цифр'
+}
+
+export const testBankCardNumber = {
+  name: 'testBankCardNumber',
   test: (value) => /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/.test(value),
   message: 'Неверный номер карты'
 }
 
-export const tesBankCardTerm = {
-  name: 'tesBankCardTerm',
+export const testBankCardTerm = {
+  name: 'testBankCardTerm',
   test: (value) => /^([1-9]|1[0-2]).\d{2}$/.test(value),
   message: 'Неверный формат даты'
 }
 
-export const tesBankCardValidity = {
-  name: 'tesBankCardValidity',
+export const testBankCardValidity = {
+  name: 'testBankCardValidity',
   test: (value) => {
     if (!/^([1-9]|1[0-2]).\d{2}$/.test(value)) return false
     const year = parseInt(String(new Date().getFullYear()).slice(2))
