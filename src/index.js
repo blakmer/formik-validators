@@ -181,3 +181,10 @@ export const testBankCardCVC = {
   test: (value) => /\d{3}/.test(value),
   message: 'Неверный CVC-код'
 }
+
+export const testLetterOfAuthorityNumber = {
+  name: 'testLetterOfAuthorityNumber',
+  test: (value) =>
+    /^[а-яА-ЯёЁa-zA-Z\d#№.-]+(?: [а-яА-ЯёЁa-zA-Z\d#№.-]+)*$/.test(value),
+  message: 'Неверный номер доверенности'
+}
