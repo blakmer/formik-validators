@@ -29,7 +29,7 @@ export const testDate = {
 
 export const testFIO = {
   name: 'testFIO',
-  test: (value) => /^[а-яА-ЯёЁa-zA-Z \d./(//)/-]*$/.test(value),
+  test: (value) => /^[а-яА-ЯёЁa-zA-Z —.–/(//)/-]*$/.test(value),
   message: 'Неверный формат ФИО'
 }
 
