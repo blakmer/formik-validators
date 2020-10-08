@@ -62,21 +62,21 @@ test('testLegalINN', () => {
   expect(tests.testLegalINN.test('122222')).toBeFalsy()
 })
 
-test('tesBankCardNumber', () => {
-  expect(tests.tesBankCardNumber.test('1111 1111 1111 1111')).toBeTruthy()
-  expect(tests.tesBankCardNumber.test('1111 1111 1111 1111 22222')).toBeFalsy()
-  expect(tests.tesBankCardNumber.test('not a number')).toBeFalsy()
+test('testBankCardNumber', () => {
+  expect(tests.testBankCardNumber.test('1111 1111 1111 1111')).toBeTruthy()
+  expect(tests.testBankCardNumber.test('1111 1111 1111 1111 22222')).toBeFalsy()
+  expect(tests.testBankCardNumber.test('not a number')).toBeFalsy()
 })
 
-test('tesBankCardTerm', () => {
-  expect(tests.tesBankCardTerm.test('12.19')).toBeTruthy()
-  expect(tests.tesBankCardTerm.test('not a number')).toBeFalsy()
+test('testBankCardTerm', () => {
+  expect(tests.testBankCardTerm.test('12.19')).toBeTruthy()
+  expect(tests.testBankCardTerm.test('not a number')).toBeFalsy()
 })
 
-test('tesBankCardValidity', () => {
+test('testBankCardValidity', () => {
   const nextYear = new Date().getFullYear() - 1999
-  expect(tests.tesBankCardValidity.test(`12.${nextYear}`)).toBeTruthy()
-  expect(tests.tesBankCardValidity.test('12.19')).toBeFalsy()
+  expect(tests.testBankCardValidity.test(`12.${nextYear}`)).toBeTruthy()
+  expect(tests.testBankCardValidity.test('12.19')).toBeFalsy()
 })
 
 test('testBankCardCVC', () => {

@@ -27,6 +27,18 @@ export const testDate = {
   message: 'Неверный формат даты'
 }
 
+export const testFIO = {
+  name: 'testFIO',
+  test: (value) => /^[а-яА-ЯёЁa-zA-Z —.–/(//)/-]*$/.test(value),
+  message: 'Неверный формат ФИО'
+}
+
+export const testPosition = {
+  name: 'testPosition',
+  test: (value) => /^[а-яА-ЯёЁa-zA-Z \d—.–/(//)/-]*$/.test(value),
+  message: 'Неверный формат должности'
+}
+
 export const testEmail = {
   name: 'testEmail',
   test: (value) => /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/.test(value),
@@ -140,20 +152,26 @@ export const testLegalINN = {
   message: 'Неверный номер ИНН'
 }
 
-export const tesBankCardNumber = {
-  name: 'tesBankCardNumber',
+export const testKPP = {
+  name: 'testKPP',
+  test: (value) => /^\d{9}$/.test(value),
+  message: 'КПП должен состоять из 9 цифр'
+}
+
+export const testBankCardNumber = {
+  name: 'testBankCardNumber',
   test: (value) => /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/.test(value),
   message: 'Неверный номер карты'
 }
 
-export const tesBankCardTerm = {
-  name: 'tesBankCardTerm',
+export const testBankCardTerm = {
+  name: 'testBankCardTerm',
   test: (value) => /^([1-9]|1[0-2]).\d{2}$/.test(value),
   message: 'Неверный формат даты'
 }
 
-export const tesBankCardValidity = {
-  name: 'tesBankCardValidity',
+export const testBankCardValidity = {
+  name: 'testBankCardValidity',
   test: (value) => {
     if (!/^([1-9]|1[0-2]).\d{2}$/.test(value)) return false
     const year = parseInt(String(new Date().getFullYear()).slice(2))
@@ -168,4 +186,24 @@ export const testBankCardCVC = {
   name: 'testBankCardCVC',
   test: (value) => /\d{3}/.test(value),
   message: 'Неверный CVC-код'
+}
+
+export const testLetterOfAuthorityNumber = {
+  name: 'testLetterOfAuthorityNumber',
+  test: (value) =>
+    /^[а-яА-ЯёЁa-zA-Z\d#№.-]+(?: [а-яА-ЯёЁa-zA-Z\d#№.-]+)*$/.test(value),
+  message: 'Неверный номер доверенности'
+}
+
+export const testDigitsOnly = {
+  name: 'digitsOnly',
+  test: (value) => /^\d*$/.test(value),
+  message: 'Только цифры'
+}
+
+// TODO: check depending on BIC?
+export const testPaymentAccount = {
+  name: 'testPaymentAccount',
+  test: (value) => /^(40702|40802)\d{15}$/.test(value),
+  message: 'Неверный расчетный счет'
 }
