@@ -201,12 +201,6 @@ export const testDigitsOnly = {
   message: 'Только цифры'
 }
 
-export const testDigitsOnly = {
-  name: 'digitsOnly',
-  test: (value) => /^\d*$/.test(value),
-  message: 'Только цифры'
-}
-
 // TODO: check depending on BIC?
 export const testPaymentAccount = {
   name: 'testPaymentAccount',
