@@ -33,6 +33,12 @@ export const testFIO = {
   message: 'Неверный формат ФИО'
 }
 
+export const testPosition = {
+  name: 'testPosition',
+  test: (value) => /^[а-яА-ЯёЁa-zA-Z \d—.–/(//)/-]*$/.test(value),
+  message: 'Неверный формат должности'
+}
+
 export const testEmail = {
   name: 'testEmail',
   test: (value) => /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/.test(value),
@@ -187,4 +193,10 @@ export const testLetterOfAuthorityNumber = {
   test: (value) =>
     /^[а-яА-ЯёЁa-zA-Z\d#№.-]+(?: [а-яА-ЯёЁa-zA-Z\d#№.-]+)*$/.test(value),
   message: 'Неверный номер доверенности'
+}
+
+export const testDigitsOnly = {
+  name: 'digitsOnly',
+  test: (value) => /^\d*$/.test(value),
+  message: 'Только цифры'
 }
